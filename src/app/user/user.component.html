@@ -1,0 +1,47 @@
+<div class="container" >
+  <h1>User Applicaiton</h1>
+</div>
+
+<div class="container" >
+ <div class="form-group" >
+   <b>Name:</b> <input #name class="form-control" type="text">
+ </div>
+ <div class="form-group" >
+<b>Age:</b><input #age class="form-control" type="number">
+</div>
+<div class="container" >
+  <div class="form-group" >
+      <b>Country:</b><input #country class="form-control" type="text">
+   </div>
+  <div class="form-group" >
+<button (click)="onadd(name.value,age.value,country.value)" class="form-control btn btn-primary">Add Me</button>
+</div>
+</div>
+<hr>
+<div class="container" >
+<table class="table" >
+
+  <th>Name</th>
+<th>Age</th>
+<th>Country</th>
+<th>Action</th>
+<tr *ngFor="let item of user_arr;let i=index">
+ <td>{{item.name}}</td>
+  <td>{{item.age}}</td>
+  <td>{{item.country}}</td>
+  <td>
+      <button  type="button" class="btn btn-primary " (click)="onUpdate(item)" RouterLink="/updateuser">Update
+          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        </button>
+        |
+        <button (click)=" onDelete(item)" type="button" class="btn btn-danger ">Delete
+         </button>
+    <!-- <button (click)="onDelete(item)" type="button" class="btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+    </button> -->
+  </td>
+</tr>
+
+</table>
+
+</div>
